@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # an oversimplified (QED-like) parton shower, 
 # for Zuoz lectures (2016) by Gavin P. Salam
 # with additional modifications (2017) by Matteo Cacciati and Gavin Salam
@@ -32,7 +32,7 @@ def main():
 
     # loop over events
     for iev in range(0,100000):
-        print "\nEvent", iev
+        print ("\nEvent", iev)
         event()
 
 def event():
@@ -53,14 +53,14 @@ def event():
         # ignore this emission and continue on down
         if (random() > acceptance_prob): continue
 
-        print "  primary emission with pt = ", pt
+        print ("  primary emission with pt = ", pt)
 
         scalar_pt_sum += pt
         # now get azimuthal angle
         phi = random() * 2*pi
         # so as to calculate the vector pt sum
         higgs_vector_pt += Perp(pt*cos(phi), pt*sin(phi))
-    print "scalar_pt_sum, higgs_vector_pt = ", scalar_pt_sum, higgs_vector_pt.abs()
+    print ("scalar_pt_sum, higgs_vector_pt = ", scalar_pt_sum, higgs_vector_pt.abs())
     
 def ptFromSudakov(sudakovValue):
     """Returns the pt value that solves the relation 

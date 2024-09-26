@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # an oversimplified (QED-like) parton shower
 # for Zuoz lectures (2016) by Gavin P. Salam
 from random import random
@@ -11,7 +11,7 @@ CA=3
 
 def main():
     for iev in range(0,10):
-        print "\nEvent", iev
+        print ("\nEvent", iev)
         event()
 
 def event():
@@ -24,7 +24,7 @@ def event():
         pt = ptFromSudakov(sudakov)
         # if pt falls below the cutoff, event is finished
         if (pt < ptCut): break
-        print "  primary emission with pt = ", pt
+        print ("  primary emission with pt = ", pt)
 
 def ptFromSudakov(sudakovValue):
     """Returns the pt value that solves the relation 
